@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ArrayListLearning {
     public ArrayList<Integer> evenNumberFinder (ArrayList<Integer> numbers) {
@@ -12,6 +13,31 @@ public class ArrayListLearning {
             }
         }
         return evenNumbers;
+    }
+
+    public ArrayList<String> addCityName (String cityName) {
+        ArrayList<String> cityNames = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        char ans;
+        for (int i = 0 ;  ; i++) {
+            System.out.println("Do you want to Add City name?(y/n)");
+            ans = Character.toLowerCase(scanner.next().charAt(0));
+            if (ans == 'y') {
+                System.out.println("Please Enter your City name");
+                cityNames.add(cityName);
+            }
+            else if (ans == 'n') break;
+            else {
+                System.out.println("Wrong Input please enter Y or N");
+            }
+        }
+        return cityNames;
+    }
+
+    public void getCityName (ArrayList<String> cityNames) {
+        for (String city: cityNames) {
+            System.out.println(city);
+        }
     }
 
     public static void main (String[] arg) {
